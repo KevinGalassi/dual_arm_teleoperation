@@ -1,0 +1,27 @@
+left_teleoperation:
+  ros__parameters:
+    group_name: "left_panda_arm"
+    joint_name: "left_panda_joint"
+    hand_tracking_topic: "/left/hand_tracking"
+    robot_twist_topic: "/left_arm/left_servo_node/delta_twist_cmds"
+    ee_frame: "left_panda_link8"
+    gripper_action_server: "/left_panda_hand_controller/gripper_cmd"
+    servo_node_name: "/left_arm/left_servo_node"
+    clip_radius: 0.1
+    vel_lin_gain: 3.0
+    vel_twist_gain: 1.0
+    control_loop_frequency: 60
+
+right_teleoperation:
+  ros__parameters:
+    group_name: "right_panda_arm"
+    joint_name: "right_panda_joint"
+    hand_tracking_topic: "/right/hand_tracking"
+    robot_twist_topic: "/right_arm/right_servo_node/delta_twist_cmds"
+    ee_frame: "right_panda_link8"
+    gripper_action_server: "/right_panda_hand_controller/gripper_cmd"
+    servo_node_name: "/right_arm/right_servo_node"
+    clip_radius: 0.1
+    vel_lin_gain: 3.0
+    vel_twist_gain: 1.0
+    control_loop_frequency: 60
