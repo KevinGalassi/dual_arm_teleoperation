@@ -3,7 +3,8 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Image1
       Splitter Ratio: 0.5
     Tree Height: 443
   - Class: rviz_common/Selection
@@ -453,105 +454,19 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz_default_plugins/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        left_arm/panda_link0:
-          Value: true
-        left_panda_hand:
-          Value: true
-        left_panda_leftfinger:
-          Value: true
-        left_panda_link0:
-          Value: true
-        left_panda_link1:
-          Value: true
-        left_panda_link2:
-          Value: true
-        left_panda_link3:
-          Value: true
-        left_panda_link4:
-          Value: true
-        left_panda_link5:
-          Value: true
-        left_panda_link6:
-          Value: true
-        left_panda_link7:
-          Value: true
-        left_panda_link8:
-          Value: true
-        left_panda_rightfinger:
-          Value: true
-        right_arm/panda_link0:
-          Value: true
-        right_panda_hand:
-          Value: true
-        right_panda_leftfinger:
-          Value: true
-        right_panda_link0:
-          Value: true
-        right_panda_link1:
-          Value: true
-        right_panda_link2:
-          Value: true
-        right_panda_link3:
-          Value: true
-        right_panda_link4:
-          Value: true
-        right_panda_link5:
-          Value: true
-        right_panda_link6:
-          Value: true
-        right_panda_link7:
-          Value: true
-        right_panda_link8:
-          Value: true
-        right_panda_rightfinger:
-          Value: true
-        world:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        world:
-          left_arm/panda_link0:
-            {}
-          left_panda_link0:
-            left_panda_link1:
-              left_panda_link2:
-                left_panda_link3:
-                  left_panda_link4:
-                    left_panda_link5:
-                      left_panda_link6:
-                        left_panda_link7:
-                          left_panda_link8:
-                            left_panda_hand:
-                              left_panda_leftfinger:
-                                {}
-                              left_panda_rightfinger:
-                                {}
-          right_arm/panda_link0:
-            {}
-          right_panda_link0:
-            right_panda_link1:
-              right_panda_link2:
-                right_panda_link3:
-                  right_panda_link4:
-                    right_panda_link5:
-                      right_panda_link6:
-                        right_panda_link7:
-                          right_panda_link8:
-                            right_panda_hand:
-                              right_panda_leftfinger:
-                                {}
-                              right_panda_rightfinger:
-                                {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Class: rviz_default_plugins/Image
       Enabled: true
       Max Value: 1
@@ -564,7 +479,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /image_results
+        Value: /image_raw/image_results
       Value: true
   Enabled: true
   Global Options:
@@ -627,10 +542,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.1953984498977661
+      Pitch: 0.055398471653461456
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.798575401306152
+      Yaw: 6.013580799102783
     Saved: ~
 Window Geometry:
   Displays:
