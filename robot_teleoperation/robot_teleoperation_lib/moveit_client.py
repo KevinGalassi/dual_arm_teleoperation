@@ -1,51 +1,41 @@
-
-
-import numpy as np
-from enum import Enum, auto
-import os, sys
-import rclpy
 from rclpy.node import Node
-from rclpy.service import Service
 from rclpy.action import ActionClient
-
+from rclpy.task import Future
 from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import Constraints, JointConstraint
-from geometry_msgs.msg import TwistStamped, Vector3, Point
-from hand_tracker.msg import HandTrack
-
-from std_srvs.srv import Trigger
-
-import sys
-
-from robot_teleoperation_lib.twist_smoother import TwistSmoother
-from robot_teleoperation_lib.gripper import GripperController
-
 
 from moveit_msgs.action import MoveGroup
 
 class MoveitClient():
-
+    """
+    A client class to interface with MoveIt! via ROS 2 ActionClient.
+    Handles sending joint-space goals to a MoveGroup action server.
+    """
 
     def __init__ (self, node : Node, group_name:str, action_name: str, joint_name:str, ready_joint_positions: list[float]):
         '''
-        node:
-        group_name
-        joint_name
-        action_name
-        ready_joint_positions
+        Initialize the MoveitClient.
+
+        Args:
+            node (Node): The ROS 2 node used for communication.
+            group_name (str): The name of the MoveIt! planning group.
+            action_name (str): The name of the MoveGroup action server.
+            joint_name (str): The prefix for joint names.
+            ready_joint_positions (list[float]): The target joint positions for the 'ready' pose.
         '''
-        
-        
         self.node = node
         self.group_name = group_name
         self.joint_name = joint_name
         self._ready_joint_positions = ready_joint_positions
         self.moveit_client = ActionClient(self.node, MoveGroup, action_name)
 
+    def send_homing_goal(self)->Future:
+        """
+        Send a goal to MoveIt! to move the robot to the 'ready' joint configuration.
 
-    # Set the target to the named pose 'ready'
-    def send_homing_goal(self):
-
+        Returns:
+            future: The future object for the asynchronous goal request.
+        """
         self._client_done = False
 
         goal_msg = MoveGroup.Goal()
