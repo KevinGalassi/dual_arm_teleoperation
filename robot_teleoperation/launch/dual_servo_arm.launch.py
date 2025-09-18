@@ -148,7 +148,7 @@ def generate_launch_description():
                 plugin="tf2_ros::StaticTransformBroadcasterNode",
                 name="static_tf2_broadcaster",
                 namespace="/right_arm",
-                parameters=[{"child_frame_id": "right_arm/panda_link0", "frame_id": "/world"}],
+                parameters=[{"child_frame_id": "/right_arm/panda_link0", "frame_id": "/world"}],
             ),
 
             ComposableNode(
