@@ -16,11 +16,19 @@ from moveit_configs_utils import MoveItConfigsBuilder
 def generate_launch_description():
 
     # ros2 launch hand_tracker camera.launch.py 
-    camera_launch = IncludeLaunchDescription(
-      PythonLaunchDescriptionSource([os.path.join(
-         get_package_share_directory('hand_tracker'), 'launch'),
-         '/camera.launch.py'])
-      )
+    camera_node = Node(
+            package='usb_cam',
+            executable='usb_cam_node_exe',
+            name='usb_cam',
+            parameters=[{
+                'video_device': '/dev/video0',
+                'image_width': 1920,
+                'image_height': 1080,
+                'pixel_format': 'mjpeg2rgb',
+                'framerate': 30.0,
+                'camera_frame_id': 'usb_cam'
+            }]
+        )
 
 
     # ros2 run hand_tracker hand_tracker_node.py 
@@ -41,7 +49,7 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
-            camera_launch,
+            camera_node,
             tracker_node,
             rqt_image_view_node
         ]
