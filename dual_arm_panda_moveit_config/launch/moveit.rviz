@@ -3,8 +3,7 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Image1
+      Expanded: ~
       Splitter Ratio: 0.5
     Tree Height: 443
   - Class: rviz_common/Selection
@@ -655,5 +654,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1685
-  X: 70
+  X: 1755
   Y: 27
