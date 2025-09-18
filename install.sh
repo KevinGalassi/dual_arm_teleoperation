@@ -8,4 +8,4 @@ sudo apt-get install -y ros-humble-moveit \
 
 
 sudo apt-get install -y python3-pip
- install mediapipe
+pip install mediapipe
