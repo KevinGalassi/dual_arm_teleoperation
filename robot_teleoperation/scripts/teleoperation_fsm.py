@@ -215,8 +215,8 @@ class TeleFSMNode(Node):
                 self._last_gripper_cmd = HandTrack.OPEN_PALM
                 
             else:
-                self.state = State.RECOVERY
-                self.get_logger().error("Error in init_action -> transition to 'RECOVERY'")
+                self.state = State.ERROR
+                self.get_logger().error("Error in init_action -> transition to 'ERROR'")
         else:
             pass
 
