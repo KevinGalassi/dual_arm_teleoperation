@@ -46,7 +46,6 @@ if(BUILD_TESTING)
 endif()
 
 install(PROGRAMS
-  scripts/prova.py
   scripts/teleoperation_fsm.py
   scripts/rviz_target_generator.py
   DESTINATION lib/${PROJECT_NAME}
