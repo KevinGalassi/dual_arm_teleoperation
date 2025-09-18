@@ -8,7 +8,7 @@ left_teleoperation:
     gripper_action_server: "/left_panda_hand_controller/gripper_cmd"
     servo_node_name: "/left_arm/left_servo_node"
     clip_radius: 0.1
-    vel_lin_gain: 3.0
+    vel_lin_gain: 2.0
     vel_twist_gain: 1.0
     control_loop_frequency: 60
 

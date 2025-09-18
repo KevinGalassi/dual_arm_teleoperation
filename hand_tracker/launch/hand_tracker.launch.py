@@ -38,6 +38,7 @@ def generate_launch_description():
         name='hand_tracker'
     )
 
+    '''
     # ros2 run rqt_image_view rqt_image_view 
     rqt_image_view_node = Node(
         package = 'rqt_image_view',
@@ -45,12 +46,14 @@ def generate_launch_description():
         name='rqt_view'
     )
 
+    '''
+    
 
 
     return LaunchDescription(
         [
             camera_node,
             tracker_node,
-            rqt_image_view_node
+            #rqt_image_view_node
         ]
     )
