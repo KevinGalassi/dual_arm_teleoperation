@@ -67,7 +67,7 @@ class GripperController:
         """
         return self.send_gripper_goal(self.max_width)
 
-    def done(self)->bool
+    def done(self)->bool:
         """
         Check if the last gripper goal has completed.
 
