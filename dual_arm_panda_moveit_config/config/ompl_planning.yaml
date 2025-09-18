@@ -1,24 +1,13 @@
 planning_plugins:
   - ompl_interface/OMPLPlanner
-# To optionally use Ruckig for jerk-limited smoothing, add this line to the response adapters below
-# - default_planning_request_adapters/AddRuckigTrajectorySmoothing
+
 request_adapters: >-
-  - default_planning_request_adapters/ResolveConstraintFrames
-  - default_planning_request_adapters/ValidateWorkspaceBounds
-  - default_planning_request_adapters/CheckStartStateBounds
-  - default_planning_request_adapters/CheckStartStateCollision
-  - default_planner_request_adapters/FixWorkspaceBounds
-  - default_planner_request_adapters/FixStartStateBounds
-  - default_planner_request_adapters/FixStartStateCollision
-  - default_planner_request_adapters/FixStartStatePathConstraints
-  - default_planner_request_adapters/AddTimeOptimalParameterization
-
-response_adapters:
-  - default_planning_response_adapters/AddTimeOptimalParameterization
-  - default_planning_response_adapters/ValidateSolution
-  - default_planning_response_adapters/DisplayMotionPath
-
-
+  default_planner_request_adapters/AddTimeOptimalParameterization
+  default_planner_request_adapters/ResolveConstraintFrames
+  default_planner_request_adapters/FixWorkspaceBounds
+  default_planner_request_adapters/FixStartStateBounds
+  default_planner_request_adapters/FixStartStateCollision
+  default_planner_request_adapters/FixStartStatePathConstraints
 
 planner_configs:
   SBLkConfigDefault:
